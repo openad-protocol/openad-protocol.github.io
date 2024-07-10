@@ -102,23 +102,31 @@ footer {
     flex-wrap: wrap;
     text-align: left;
 }
-.footer-section {
-    flex: 1 1 200px;
-    margin: 10px;
+.footer-content > div {
+    margin: 20px;
 }
-.footer-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+
+.footer-section a {
+    list-style: none;
+    padding: 0;
 }
-.footer-section p {
-    font-size: 0.9rem;
+
+.footer-section a {
+    margin: 10px 0;
 }
+
 .footer-section a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
+
+.footer-section a {
+    font-size: 1.5em;
+}
+
 .footer-section a:hover {
-    text-decoration: underline;
+    color: #007bff;
 }
 .footer-bottom {
     text-align: center;
