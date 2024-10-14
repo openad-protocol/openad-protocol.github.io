@@ -8,22 +8,22 @@ import PlatformIcon4 from './assets/115.png';
 const items = [
   {
     icon: PlatformIcon1,
-    desc: 'Promote your apps to new users',
+    desc: 'Effectively promote your app to a fresh audience.',
     backgroundColor: '#FFF7E1',
   },
   {
     icon: PlatformIcon2,
-    desc: 'Keep users stay longer',
+    desc: 'Keep users active and engaged longer within your app.',
     backgroundColor: '#E9F0FE',
   },
   {
     icon: PlatformIcon3,
-    desc: 'Maximize exposure to potential users and clicks',
+    desc: 'Increase exposure to potential users and drive higher interaction.',
     backgroundColor: '#FCE8E5',
   },
   {
     icon: PlatformIcon4,
-    desc: 'Manage your own ads budget and strategy',
+    desc: 'Manage your advertising budget and strategy with complete autonomy.',
     backgroundColor: '#E7F4EB',
   },
 ];
