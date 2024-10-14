@@ -72,3 +72,9 @@ export const RESTRICTED_COUNTRIES_CODES = [
   'BY',
   'RU',
 ];
+
+export const ADS_LINK =
+  'https://bf2055756e.node.openad.network/#/campaign/create';
+
+export const FLOW_RATE_LINK =
+  'https://bf2055756e.node.openad.network/#/slot/create';
