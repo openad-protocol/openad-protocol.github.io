@@ -78,3 +78,5 @@ export const ADS_LINK =
 
 export const FLOW_RATE_LINK =
   'https://bf2055756e.node.openad.network/#/slot/create';
+
+export const DOC_LINK = 'https://docs.openad.network';
