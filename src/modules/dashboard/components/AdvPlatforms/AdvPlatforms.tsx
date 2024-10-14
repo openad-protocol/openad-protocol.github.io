@@ -32,7 +32,7 @@ export function AdvPlatforms({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   const { classes } = useAdvPlatformsStyles();
 
   return (
-    <Box className={classes.root} sx={sx}>
+    <Box id="features" className={classes.root} sx={sx}>
       <Typography variant="h1">{`One-stop Smart Adverstising Platform`}</Typography>
 
       <List className={classes.advBox}>

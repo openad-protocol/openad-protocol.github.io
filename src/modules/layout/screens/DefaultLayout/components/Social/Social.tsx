@@ -3,8 +3,8 @@ import { useSocialStyles } from './useSocialStyles';
 import { FacebookIcon, TelegramIcon, UnknownIcon } from 'modules/common/icons';
 
 const soscialItems = [
-  { icon: TelegramIcon, link: '' },
-  { icon: FacebookIcon, link: '' },
+  { icon: TelegramIcon, link: 'https://t.me/OpenAD_protocol' },
+  { icon: FacebookIcon, link: 'https://x.com/OpenAD_Protocol' },
   { icon: UnknownIcon, link: '' },
 ];
 
@@ -15,7 +15,7 @@ export function Social({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
     <List className={classes.root} sx={sx}>
       {soscialItems.map((item, index) => (
         <ListItem disablePadding key={index} sx={{ width: { xs: 'auto' } }}>
-          <a>
+          <a href={item.link} target="_blank">
             <item.icon />
           </a>
         </ListItem>

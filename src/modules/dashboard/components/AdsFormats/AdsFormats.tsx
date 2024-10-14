@@ -1,5 +1,5 @@
 import { Box, BoxProps, Button, Typography } from '@mui/material';
-import { useForAdvertiserStyles } from './useForAdvertiserStyles';
+import { useAdsFormatsStyles } from './useAdsFormatsStyles';
 import { useState } from 'react';
 import AdsBanner1 from './assets/12.png';
 import AdsBanner2 from './assets/133.png';
@@ -15,7 +15,7 @@ const groupItems = ['Banner Ads', 'Interactive Ads', 'Task Ads'];
 
 const descItems = [
   'To create memorable and visually appealing ads that resonate with mini-app users, focus on captivating design and clear messaging',
-  'TUnlock your next level by watching a quick video—gain an extra chance to continue the adventure!',
+  'Unlock your next level by watching a quick video—gain an extra chance to continue the adventure!',
   'Turn ads into tasks—engage your users while they earn rewards for completing simple actions!',
 ];
 
@@ -33,8 +33,8 @@ const floatingPositions = [
   [0, 260],
 ];
 
-export function ForAdvertiser({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
-  const { classes, cx } = useForAdvertiserStyles();
+export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
+  const { classes, cx } = useAdsFormatsStyles();
   const [tabIndex, setTabIndex] = useState(0);
 
   return (

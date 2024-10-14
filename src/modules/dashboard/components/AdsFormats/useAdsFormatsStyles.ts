@@ -1,7 +1,7 @@
 import { buttonBaseClasses } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
-export const useForAdvertiserStyles = makeStyles()(theme => ({
+export const useAdsFormatsStyles = makeStyles()(theme => ({
   root: {
     // minHeight: '100vh',
     display: 'flex',
@@ -16,6 +16,7 @@ export const useForAdvertiserStyles = makeStyles()(theme => ({
       fontWeight: 700,
       textAlign: 'center',
       whiteSpace: 'pre-wrap',
+      textTransform: 'capitalize',
     },
 
     '@keyframes fadeIn': {

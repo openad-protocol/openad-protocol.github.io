@@ -7,7 +7,7 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   const { classes } = useFeaturesStyles();
 
   return (
-    <Box id="features" component="div" className={classes.root} sx={sx}>
+    <Box component="div" className={classes.root} sx={sx}>
       <Typography
         sx={theme => ({
           [theme.breakpoints.down('sm')]: {

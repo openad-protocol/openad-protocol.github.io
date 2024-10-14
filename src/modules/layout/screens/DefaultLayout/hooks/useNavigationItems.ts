@@ -34,11 +34,11 @@ export const useNavigationItems = (): INavItem[] => {
 
       {
         title: 'For Advertiser',
-        link: `#for-advertiser`,
+        link: ``,
       },
       {
         title: 'For Publisher',
-        link: `#for-publisher`,
+        link: ``,
       },
     ],
     [keys, t],

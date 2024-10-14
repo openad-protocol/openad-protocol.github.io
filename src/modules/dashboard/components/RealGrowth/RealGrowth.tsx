@@ -19,7 +19,7 @@ const items = [
   {
     icon: Icon3,
     title: 'Learn from campaign reports for better returns',
-    desc: 'We employ advanced anti-bot measures to ensure real user engagement and prevent fraudulent activity.',
+    desc: 'Maximize the impact of every budget spent with highly efficient ad campaigns that deliver real value for your investment.',
   },
 ];
 

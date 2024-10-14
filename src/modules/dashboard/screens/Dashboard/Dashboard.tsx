@@ -3,7 +3,7 @@ import { Section } from 'modules/common/components/Section';
 import AdvPlatforms from 'modules/dashboard/components/AdvPlatforms';
 import Connect from 'modules/dashboard/components/Connect';
 import { Features } from 'modules/dashboard/components/Features';
-import ForAdvertiser from 'modules/dashboard/components/ForAdvertiser';
+import AdsFormats from 'modules/dashboard/components/AdsFormats';
 import RealGrowth from 'modules/dashboard/components/RealGrowth';
 import { useUpdateOptimisticClaims } from 'modules/dashboard/hooks/useUpdateOptimisticClaims';
 
@@ -21,7 +21,7 @@ export function Dashboard(): JSX.Element {
           })}
         />
 
-        <ForAdvertiser
+        <AdsFormats
           sx={theme => ({
             [theme.breakpoints.down('lg')]: {
               px: theme.spacing(2.5),
