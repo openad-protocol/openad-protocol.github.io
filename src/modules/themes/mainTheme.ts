@@ -137,9 +137,13 @@ export const mainThemeOptions: ThemeOptions = {
   components: {
     MuiCssBaseline: {
       styleOverrides: {
+        html: {
+          overflowX: 'hidden',
+        },
         body: {
           minHeight: '100vh',
           background: theme.palette.background.default,
+          overflowX: 'hidden',
         },
       },
     },

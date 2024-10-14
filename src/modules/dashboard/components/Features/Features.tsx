@@ -8,7 +8,10 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
   return (
     <Box component="div" className={classes.root} sx={sx}>
-      <Typography variant="h1" sx={{}}>
+      <Typography
+        variant="h1"
+        sx={{ display: 'flex', alignItems: 'flex-start' }}
+      >
         <Box
           component="img"
           src={Logo}
