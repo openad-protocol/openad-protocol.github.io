@@ -3,7 +3,7 @@ import { makeStyles } from 'tss-react/mui';
 
 export const useForAdvertiserStyles = makeStyles()(theme => ({
   root: {
-    minHeight: '100vh',
+    // minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',

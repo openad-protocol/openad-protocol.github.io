@@ -6,6 +6,7 @@ export const useHeaderStyles = makeStyles()(theme => ({
     position: 'sticky',
     top: 0,
     background: theme.palette.background.paper,
+    zIndex: theme.zIndex.appBar,
 
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(2.5, 0),
