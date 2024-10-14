@@ -1,1 +1,0 @@
-import{v as n,j as e,w as t,x as i,o as a}from"./index-fvyn96iy.js";const l=()=>{const{classes:s}=n();return e.jsxs("div",{className:s.root,children:[e.jsx(t,{className:s.menuLink,title:"Testing only",to:i.dev.generatePath(),children:"🧪 Test menu"}),a.offlineTesting&&e.jsx("span",{children:"⚠️ Offline testing is enabled"})]})};export{l as TestLink};
