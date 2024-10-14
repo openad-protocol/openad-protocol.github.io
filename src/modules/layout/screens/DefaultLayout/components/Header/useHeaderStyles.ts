@@ -3,7 +3,8 @@ import { makeStyles } from 'tss-react/mui';
 export const useHeaderStyles = makeStyles()(theme => ({
   root: {
     padding: theme.spacing(1, 0),
-    position: 'sticky',
+    position: 'fixed',
+    width: '100%',
     top: 0,
     background: theme.palette.background.paper,
     zIndex: theme.zIndex.appBar,
