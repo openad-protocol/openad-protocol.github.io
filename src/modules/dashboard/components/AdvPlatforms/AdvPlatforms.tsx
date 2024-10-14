@@ -8,21 +8,25 @@ import PlatformIcon4 from './assets/115.png';
 const items = [
   {
     icon: PlatformIcon1,
+    title: 'Reach New Users with Ease',
     desc: 'Effectively promote your app to a fresh audience.',
     backgroundColor: '#FFF7E1',
   },
   {
     icon: PlatformIcon2,
+    title: 'Boost User Engagement',
     desc: 'Keep users active and engaged longer within your app.',
     backgroundColor: '#E9F0FE',
   },
   {
     icon: PlatformIcon3,
+    title: 'Maximize Visibility and Clicks',
     desc: 'Increase exposure to potential users and drive higher interaction.',
     backgroundColor: '#FCE8E5',
   },
   {
     icon: PlatformIcon4,
+    title: 'Full Control Over Ads',
     desc: 'Manage your advertising budget and strategy with complete autonomy.',
     backgroundColor: '#E7F4EB',
   },
@@ -42,6 +46,7 @@ export function AdvPlatforms({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
             sx={{ backgroundColor: item.backgroundColor }}
           >
             <img src={item.icon} />
+            <Typography variant="h3">{item.title}</Typography>
             <Typography>{item.desc}</Typography>
           </ListItem>
         ))}

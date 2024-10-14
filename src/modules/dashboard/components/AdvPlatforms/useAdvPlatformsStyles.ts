@@ -26,14 +26,22 @@ export const useAdvPlatformsStyles = makeStyles()(theme => ({
       padding: theme.spacing(3.5),
       flexDirection: 'column',
       alignItems: 'flex-start',
-      gap: theme.spacing(5),
+      // gap: theme.spacing(5)
+      maxWidth: theme.typography.pxToRem(511),
 
       img: {
         width: theme.typography.pxToRem(72),
         aspectRatio: '1 / 1',
       },
 
+      h3: {
+        fontSize: theme.typography.pxToRem(26),
+        marginTop: theme.typography.pxToRem(20),
+        fontWeight: 700,
+      },
+
       p: {
+        marginTop: theme.typography.pxToRem(12),
         fontSize: theme.typography.pxToRem(20),
       },
     },
