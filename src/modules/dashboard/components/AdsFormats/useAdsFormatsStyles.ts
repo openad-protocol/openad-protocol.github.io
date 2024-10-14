@@ -11,11 +11,8 @@ export const useAdsFormatsStyles = makeStyles()(theme => ({
     padding: theme.spacing(10, 0, 10, 0),
 
     h1: {
-      fontSize: theme.typography.pxToRem(64),
       maxWidth: theme.typography.pxToRem(800),
-      fontWeight: 700,
       textAlign: 'center',
-      whiteSpace: 'pre-wrap',
       textTransform: 'capitalize',
     },
 

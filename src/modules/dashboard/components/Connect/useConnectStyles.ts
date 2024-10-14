@@ -10,11 +10,8 @@ export const useConnectStyles = makeStyles()(theme => ({
     backgroundColor: '#F2F6FF',
 
     h1: {
-      fontSize: theme.typography.pxToRem(64),
       maxWidth: theme.typography.pxToRem(791),
-      fontWeight: 700,
       textAlign: 'center',
-      whiteSpace: 'pre-wrap',
     },
   },
 
@@ -30,6 +27,10 @@ export const useConnectStyles = makeStyles()(theme => ({
       borderRadius: theme.typography.pxToRem(5),
       backgroundColor: '#2FA0DA',
       color: theme.palette.common.white,
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
     },
   },
 }));

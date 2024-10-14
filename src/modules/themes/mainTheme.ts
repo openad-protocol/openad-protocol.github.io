@@ -81,12 +81,13 @@ export const mainThemeOptions: ThemeOptions = {
     fontFamily: 'Inter Tight, sans-serif',
 
     h1: {
-      fontWeight: 500,
-      fontSize: theme.typography.pxToRem(28),
       fontFamily: OPEN_SANS_FONT_FAMILY,
+      fontSize: theme.typography.pxToRem(64),
+      fontWeight: 700,
+      whiteSpace: 'pre-wrap',
 
-      [theme.breakpoints.up('md')]: {
-        fontSize: theme.typography.pxToRem(48),
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.pxToRem(32),
       },
     },
 

@@ -9,11 +9,8 @@ export const useRealGrowthStyles = makeStyles()(theme => ({
     backgroundColor: '#FBFBFB',
 
     h1: {
-      fontSize: theme.typography.pxToRem(64),
       maxWidth: theme.typography.pxToRem(1000),
-      fontWeight: 700,
       textAlign: 'center',
-      whiteSpace: 'pre-wrap',
     },
   },
 
@@ -54,7 +51,11 @@ export const useRealGrowthStyles = makeStyles()(theme => ({
   },
 
   banner: {
-    fontSize: theme.typography.pxToRem(445),
+    width: theme.typography.pxToRem(445),
+
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
 
   gridBox: {

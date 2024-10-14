@@ -15,12 +15,7 @@ export const useFeaturesStyles = makeStyles()(theme => ({
     background: `url('${Bg}') no-repeat center`,
     backgroundSize: `${theme.typography.pxToRem(770)} auto`,
 
-    p: {
-      fontWeight: 700,
-      fontSize: theme.typography.pxToRem(63),
-      display: 'flex',
-      alignItems: 'center',
-
+    h1: {
       [`.typed-cursor`]: {
         color: theme.palette.common.black,
         width: theme.typography.pxToRem(6),
@@ -29,6 +24,10 @@ export const useFeaturesStyles = makeStyles()(theme => ({
         backgroundColor: theme.palette.common.black,
         transform: 'translateY(20%)',
         marginLeft: theme.spacing(1),
+
+        [theme.breakpoints.down('sm')]: {
+          height: theme.typography.pxToRem(32),
+        },
       },
     },
 
@@ -42,6 +41,10 @@ export const useFeaturesStyles = makeStyles()(theme => ({
       [theme.breakpoints.down('sm')]: {
         marginRight: 0,
       },
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      gap: theme.typography.pxToRem(0),
     },
   },
 }));

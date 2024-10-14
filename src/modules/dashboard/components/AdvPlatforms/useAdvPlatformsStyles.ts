@@ -8,11 +8,8 @@ export const useAdvPlatformsStyles = makeStyles()(theme => ({
     padding: theme.spacing(10, 0, 15, 0),
 
     h1: {
-      fontSize: theme.typography.pxToRem(64),
       maxWidth: theme.typography.pxToRem(1000),
-      fontWeight: 700,
       textAlign: 'center',
-      whiteSpace: 'pre-wrap',
     },
   },
 

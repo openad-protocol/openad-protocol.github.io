@@ -1,23 +1,37 @@
 import { Box, BoxProps, Typography } from '@mui/material';
 import { useFeaturesStyles } from './useFeaturesStyles';
 import { ReactTyped } from 'react-typed';
-import { Logo } from 'modules/layout';
+import Logo from './assets/logo.jpg';
 
 export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   const { classes } = useFeaturesStyles();
 
   return (
     <Box component="div" className={classes.root} sx={sx}>
-      <Typography
-        sx={theme => ({
-          [theme.breakpoints.down('sm')]: {
-            display: 'flex',
-            flexDirection: 'column',
-          },
-        })}
-      >
-        <Logo />
-        Builds
+      <Typography variant="h1" sx={{}}>
+        <Box
+          component="img"
+          src={Logo}
+          sx={theme => ({
+            width: theme.typography.pxToRem(87),
+            objectFit: 'contain',
+
+            [theme.breakpoints.down('sm')]: {
+              width: theme.typography.pxToRem(43),
+            },
+          })}
+        />
+        Open
+        <Typography
+          sx={theme => ({
+            display: 'contents !important',
+            color: theme.palette.primary.main,
+          })}
+          variant="h1"
+        >
+          AD
+        </Typography>{' '}
+        Protocol Builds
       </Typography>
 
       <Typography
@@ -27,6 +41,7 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           minHeight: theme.typography.pxToRem(87),
           textAlign: 'center',
         })}
+        variant="h1"
       >
         <ReactTyped
           strings={[
@@ -42,7 +57,9 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
         />
       </Typography>
 
-      <Typography textAlign="center">Advertising on Telegram</Typography>
+      <Typography variant="h1" textAlign="center">
+        Advertising on Telegram
+      </Typography>
     </Box>
   );
 }
