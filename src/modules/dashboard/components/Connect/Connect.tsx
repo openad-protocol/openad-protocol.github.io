@@ -9,7 +9,7 @@ export function Connect({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
   return (
     <Box className={classes.root} sx={sx}>
-      <Typography variant="h1">{`Connect with real users and monetize`}</Typography>
+      <Typography variant="h1">{`Connect With Real Users and Monetize`}</Typography>
 
       <div className={classes.buttonBox}>
         <Button href={ADS_LINK} target="_blank">
