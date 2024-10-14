@@ -15,7 +15,7 @@ interface LpTvlResponseData {
 }
 export const getLpTvlFromSentio = async () => {
   const url =
-    'https://app.sentio.xyz/api/v1/insights/lombard/lombard-uniswapv3-info/query';
+    'https://app.sentio.xyz/api/v1/insights/openad/openad-uniswapv3-info/query';
   try {
     const { data }: { data: LpTvlResponseData } = await axios.post(
       url,

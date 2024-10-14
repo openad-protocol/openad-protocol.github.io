@@ -16,7 +16,7 @@ interface LpApyResponseData {
 }
 export const getLpApyFromSentio = async () => {
   const url =
-    'https://app.sentio.xyz/api/v1/insights/lombard/lombard-uniswapv3-info/query';
+    'https://app.sentio.xyz/api/v1/insights/openad/openad-uniswapv3-info/query';
   try {
     const { data }: { data: LpApyResponseData } = await axios.post(
       url,

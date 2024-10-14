@@ -15,7 +15,7 @@ interface HoldTimeData {
 
 export const getHoldTimeFromSentio = async (address: string) => {
   const url =
-    'https://app.sentio.xyz/api/v1/analytics/lombard/lombard-holding-points-eth/sql/execute';
+    'https://app.sentio.xyz/api/v1/analytics/openad/openad-holding-points-eth/sql/execute';
   const sql = getSentioHoldTimeSql(address);
   try {
     const { data }: { data: HoldTimeData } = await axios.post(
@@ -48,7 +48,7 @@ export const getHoldTimeFromSentio = async (address: string) => {
 
 export const getAvgHoldTimeFromSentio = async () => {
   const url =
-    'https://app.sentio.xyz/api/v1/analytics/lombard/lombard-holding-points-eth/sql/execute';
+    'https://app.sentio.xyz/api/v1/analytics/openad/openad-holding-points-eth/sql/execute';
   const sql = getAvgHoldingTimeSql();
   try {
     const { data }: { data: HoldTimeData } = await axios.post(

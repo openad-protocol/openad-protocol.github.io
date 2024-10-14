@@ -1,7 +1,7 @@
 {
-  "name": "lombard-app",
+  "name": "openad-app",
   "description": "BTC liquid staking app",
-  "repository": "lombardfinance.com",
+  "repository": "openadfinance.com",
   "private": true,
   "version": "0.0.0",
   "type": "commonjs",

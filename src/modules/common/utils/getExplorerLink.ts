@@ -19,7 +19,7 @@ const explorerLinks: Record<TNetwork, string> = {
   [OChainId.lineaSepolia]: 'https://sepolia.lineascan.build',
   [OChainId.zircuit]: 'https://explorer.zircuit.com',
 
-  bitcoin: 'https://lombard.mempool.space',
+  bitcoin: 'https://openad.mempool.space',
   bitcoinSignet: 'https://mempool.space/signet',
 };
 

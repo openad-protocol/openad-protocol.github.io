@@ -16,7 +16,7 @@ interface ResponseData {
 }
 export const getLpPositionFromSentio = async (address: string) => {
   const url =
-    'https://app.sentio.xyz/api/v1/insights/lombard/lombard-uniswapv3-ethereum/query';
+    'https://app.sentio.xyz/api/v1/insights/openad/openad-uniswapv3-ethereum/query';
   try {
     const { data }: { data: ResponseData } = await axios.post(
       url,
@@ -120,7 +120,7 @@ export const getLpPositionFromSentio = async (address: string) => {
               disabled: true,
             },
             dataSource: 'METRICS',
-            sourceName: 'lombard-uniswapv3-info',
+            sourceName: 'openad-uniswapv3-info',
           },
           {
             priceQuery: {

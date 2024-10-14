@@ -18,7 +18,7 @@ const chainTranslation: Record<TChainId, string> = {
 
 export const globalTranslation = {
   [Locale.en]: {
-    appName: 'LombardFinance',
+    appName: 'OpenAD',
     format: {
       date: '{value, date, medium}',
       timeShort: '{value, time, short}',

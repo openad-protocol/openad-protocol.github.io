@@ -6,7 +6,7 @@ import { useTranslation } from 'modules/i18n';
 import { translation } from './translation';
 import { useAppBannerStyles } from './useAppBannerStyles';
 
-const DISCLAIMER_LINK = 'https://docs.lombard.finance/legals/uk-residents';
+const DISCLAIMER_LINK = 'https://docs.openad.finance/legals/uk-residents';
 
 export function AppBanner(): JSX.Element | null {
   const { classes } = useAppBannerStyles();

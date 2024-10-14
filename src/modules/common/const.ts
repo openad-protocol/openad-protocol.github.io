@@ -37,20 +37,20 @@ export const ONE = new BigNumber(1);
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
 export const WEBSITE_LINK = IS_PROD
-  ? 'https://www.lombard.finance'
-  : 'https://stage.lombard.finance';
+  ? 'https://www.openad.finance'
+  : 'https://stage.openad.finance';
 
-export const TWITTER_LINK = 'https://x.com/lombard_finance';
+export const TWITTER_LINK = 'https://x.com/openad_finance';
 
 export const TERMS_OF_SERVICE_LINK =
-  'https://docs.lombard.finance/legals/terms-of-service';
+  'https://docs.openad.finance/legals/terms-of-service';
 
-export const POLICY_LINK = 'https://docs.lombard.finance/legals/privacy-policy';
+export const POLICY_LINK = 'https://docs.openad.finance/legals/privacy-policy';
 
 export const UNSTAKE_INFO_LINK =
-  'https://docs.lombard.finance/faq/lbtc-faq#can-i-withdraw-my-btc-from-lombard';
+  'https://docs.openad.finance/faq/lbtc-faq#can-i-withdraw-my-btc-from-openad';
 
-export const SUPPORT_EMAIL = 'support@lombard.finance';
+export const SUPPORT_EMAIL = 'support@openad.finance';
 
 export const UNSTAKING_PERIOD: Days = 7;
 export const UNSTAKING_TEXT = `${UNSTAKING_PERIOD} days`;

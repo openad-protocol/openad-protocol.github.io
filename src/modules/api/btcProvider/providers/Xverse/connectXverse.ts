@@ -15,7 +15,7 @@ export async function connectXverse(): Promise<IConnectBtcResponse> {
 
   const response = await injectedProvider.request('getAccounts', {
     purposes: ['payment'],
-    message: 'Connect Lombard APP to Xverse wallet.',
+    message: 'Connect OpenAD APP to Xverse wallet.',
   });
 
   return {
