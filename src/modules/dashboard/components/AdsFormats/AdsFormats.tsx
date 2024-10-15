@@ -1,6 +1,6 @@
 import { Box, BoxProps, Button, Typography } from '@mui/material';
 import { useAdsFormatsStyles } from './useAdsFormatsStyles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AdsBanner1 from './assets/12.png';
 import AdsBanner2 from './assets/133.png';
 import AdsBanner3 from './assets/9898.png';
@@ -33,6 +33,17 @@ const floatingPositions = [
   [0, 260],
 ];
 
+function PreloadImages({ images }: { images: string[] }): JSX.Element {
+  useEffect(() => {
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
+
+  return <></>;
+}
+
 export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   const { classes, cx } = useAdsFormatsStyles();
   const [tabIndex, setTabIndex] = useState(0);
@@ -54,6 +65,8 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
       </Box>
 
       <div className={classes.adsBox}>
+        <PreloadImages images={bannerItems} />
+
         <Box
           component="div"
           position="relative"
