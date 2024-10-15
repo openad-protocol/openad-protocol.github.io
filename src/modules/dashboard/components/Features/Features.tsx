@@ -2,6 +2,7 @@ import { Box, BoxProps, Typography } from '@mui/material';
 import { useFeaturesStyles } from './useFeaturesStyles';
 import { ReactTyped } from 'react-typed';
 import Logo from './assets/logo.jpg';
+import { OPEN_SANS_FONT_FAMILY } from 'modules/themes';
 
 export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   const { classes } = useFeaturesStyles();
@@ -29,8 +30,15 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           sx={theme => ({
             display: 'contents !important',
             color: theme.palette.primary.main,
+            fontFamily: OPEN_SANS_FONT_FAMILY,
+            fontSize: theme.typography.pxToRem(64),
+            fontWeight: 700,
+            whiteSpace: 'pre-wrap',
+
+            [theme.breakpoints.down('sm')]: {
+              fontSize: theme.typography.pxToRem(32),
+            },
           })}
-          variant="h1"
         >
           AD
         </Typography>{' '}

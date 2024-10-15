@@ -1,5 +1,3 @@
-import { ConnectionModal } from 'modules/auth';
-import { BtcConnectionModal } from 'modules/auth/screens/BtcConnectionModal';
 import { featureConfig } from 'modules/common/featureConfig';
 import { LazyTestLink } from 'modules/dev';
 import { ILayoutProps, Layout } from 'modules/layout/components/Layout';
@@ -28,10 +26,6 @@ export function DefaultLayout({
       }
     >
       {children}
-
-      <ConnectionModal />
-
-      <BtcConnectionModal />
     </Layout>
   );
 }
