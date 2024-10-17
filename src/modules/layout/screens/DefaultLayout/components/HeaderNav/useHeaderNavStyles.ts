@@ -14,14 +14,15 @@ export const useHeaderNavStyles = makeStyles()(theme => ({
     color: 'inherit',
     padding: theme.spacing(1, 1),
     borderRadius: 8,
+    transition: 'all 0.3s linear',
 
     '&:hover': {
-      color: theme.palette.primary.main,
+      color: '#58C2F9',
     },
 
     '&.customActive': {
       cursor: 'default',
-      color: theme.palette.primary.main,
+      color: '#58C2F9',
 
       '&:active': {
         transform: 'none',

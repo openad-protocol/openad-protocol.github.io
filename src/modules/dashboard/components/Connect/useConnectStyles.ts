@@ -27,6 +27,11 @@ export const useConnectStyles = makeStyles()(theme => ({
       borderRadius: theme.typography.pxToRem(5),
       backgroundColor: '#2FA0DA',
       color: theme.palette.common.white,
+
+      '&:hover': {
+        transition: 'all 0.3s linear',
+        background: '#58C2F9',
+      },
     },
 
     [theme.breakpoints.down('sm')]: {

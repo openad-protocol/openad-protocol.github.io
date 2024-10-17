@@ -78,7 +78,7 @@ export const mainThemeOptions: ThemeOptions = {
     borderRadius: 0,
   },
   typography: {
-    fontFamily: 'Inter Tight, sans-serif',
+    fontFamily: OPEN_SANS_FONT_FAMILY,
 
     h1: {
       fontFamily: OPEN_SANS_FONT_FAMILY,

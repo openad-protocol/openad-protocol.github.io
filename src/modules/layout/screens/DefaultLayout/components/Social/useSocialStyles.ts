@@ -12,6 +12,24 @@ export const useSocialStyles = makeStyles()(theme => ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+
+      svg: {
+        circle: {
+          transition: 'all 0.3s linear',
+        },
+        path: {
+          transition: 'all 0.3s linear',
+        },
+
+        '&:hover': {
+          circle: {
+            fill: theme.palette.common.black,
+          },
+          path: {
+            fill: theme.palette.common.white,
+          },
+        },
+      },
     },
   },
 }));
