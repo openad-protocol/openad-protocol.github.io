@@ -19,6 +19,7 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           sx={theme => ({
             width: theme.typography.pxToRem(87),
             objectFit: 'contain',
+            margin: 'auto',
 
             [theme.breakpoints.down('sm')]: {
               width: theme.typography.pxToRem(43),

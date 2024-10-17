@@ -2,8 +2,8 @@ import { ButtonBase, Container } from '@mui/material';
 import { dashboardRouteConfig } from 'modules/dashboard';
 import { Link } from 'react-router-dom';
 // import { useFooterStyles } from './useFooterStyles';
-import Logo from '/logo.png';
 import { Social } from '../Social';
+import { LogoText } from 'modules/layout/components/LogoText';
 
 const homePath = dashboardRouteConfig.main.generatePath();
 
@@ -26,7 +26,7 @@ export function Footer(): JSX.Element {
       })}
     >
       <ButtonBase to={homePath} component={Link}>
-        <img src={Logo} />
+        <LogoText />
       </ButtonBase>
 
       <Social />

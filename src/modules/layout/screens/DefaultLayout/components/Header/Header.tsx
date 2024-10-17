@@ -7,8 +7,8 @@ import { HeaderNav } from '../HeaderNav';
 import { HeaderNavMobile } from '../HeaderNavMobile';
 import { default as MenuIcon } from './assets/menu.svg?react';
 import { useMobileMenu } from './useMobileMenu';
-import Logo from '/logo.png';
 import { Social } from '../Social';
+import { LogoText } from 'modules/layout/components/LogoText';
 
 const homePath = dashboardRouteConfig.main.generatePath();
 
@@ -20,7 +20,7 @@ export function Header(): JSX.Element {
     <header className={classes.root}>
       <Container maxWidth={false} className={classes.container}>
         <ButtonBase to={homePath} component={Link}>
-          <img src={Logo} />
+          <LogoText />
         </ButtonBase>
 
         <HeaderNav sx={{ display: { xs: 'none', lg: 'grid' } }} />

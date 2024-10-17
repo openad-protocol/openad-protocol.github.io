@@ -30,18 +30,7 @@ export function RealGrowth({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
     <Box className={classes.root} sx={sx}>
       <Typography variant="h1">
         {'Leverage '}
-        <Typography
-          component="span"
-          sx={theme => ({
-            color: theme.palette.primary.main,
-            display: 'contents',
-            fontSize: 'inherit',
-            fontWeight: 'inherit',
-          })}
-        >
-          OpenAD
-        </Typography>
-        {` Protocol for Real Growth`}
+        {`OpenAD Protocol for Real Growth`}
       </Typography>
 
       <div className={classes.gridBox}>
