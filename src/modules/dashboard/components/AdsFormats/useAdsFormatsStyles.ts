@@ -56,11 +56,12 @@ export const useAdsFormatsStyles = makeStyles()(theme => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(2,1fr)',
     maxWidth: 1012,
-    marginTop: theme.spacing(3.5),
+    marginTop: theme.spacing(12.5),
     gap: theme.spacing(7.5),
 
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: 'auto',
+      marginTop: theme.spacing(5),
     },
   },
 
