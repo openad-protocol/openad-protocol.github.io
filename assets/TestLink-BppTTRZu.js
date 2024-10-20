@@ -1,0 +1,1 @@
+import{af as n,j as e,ag as t,ah as a,ab as i}from"./index-TOTP5cLG.js";const l=()=>{const{classes:s}=n();return e.jsxs("div",{className:s.root,children:[e.jsx(t,{className:s.menuLink,title:"Testing only",to:a.dev.generatePath(),children:"🧪 Test menu"}),i.offlineTesting&&e.jsx("span",{children:"⚠️ Offline testing is enabled"})]})};export{l as TestLink};
