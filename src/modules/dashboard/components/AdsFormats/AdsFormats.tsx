@@ -14,9 +14,9 @@ import AdsFloating6 from './assets/float-item-6.png';
 const groupItems = ['Banner Ads', 'Interactive Ads', 'Task Ads'];
 
 const descItems = [
-  'To create memorable and visually appealing ads that resonate with mini-app users, focus on captivating design and clear messaging',
-  'Unlock your next level by watching a quick video—gain an extra chance to continue the adventure!',
-  'Turn ads into tasks—engage your users while they earn rewards for completing simple actions!',
+  'Deliver visually appealing, memorable ads that effectively engage your audience among multiple mini app scenarios.',
+  'Provide interactive, multi-scenario in-app ads and allow users to gain additional chance to continue the game, leading real quality users to stay longer and learn more about your product through immersive, action-driven experiences.',
+  'Without disrupting the original app experience, we seamlessly embed tasks within apps scenarios, offering premium, rotating ad content for users to earn rewards like points by viewing designated ads.',
 ];
 
 const bannerItems = [AdsBanner1, AdsBanner2, AdsBanner3];
