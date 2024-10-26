@@ -1,8 +1,8 @@
 import { Box, BoxProps, Typography } from '@mui/material';
 import { usePerformanceStyles } from './usePerformanceStyles';
 import { useEffect, useState } from 'react';
-import Banner1 from './assets/001.jpg';
-import Banner2 from './assets/002.jpg';
+import Banner1 from './assets/001.png';
+import Banner2 from './assets/002.png';
 
 const items = [
   {
