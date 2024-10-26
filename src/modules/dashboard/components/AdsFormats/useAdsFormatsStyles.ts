@@ -61,7 +61,12 @@ export const useAdsFormatsStyles = makeStyles()(theme => ({
 
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: 'auto',
-      marginTop: theme.spacing(5),
+      height: 'auto',
+      gap: 0,
+      // marginTop: theme.spacing(5),
+      video: {
+        width: '100%',
+      },
     },
   },
 
