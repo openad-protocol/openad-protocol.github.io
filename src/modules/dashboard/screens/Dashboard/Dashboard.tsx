@@ -48,7 +48,6 @@ export function Dashboard(): JSX.Element {
 
         <Performance
           sx={theme => ({
-            display: 'none !important',
             [theme.breakpoints.down('lg')]: {
               px: theme.spacing(2.5),
             },

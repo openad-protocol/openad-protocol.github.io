@@ -12,6 +12,15 @@ export const usePerformanceStyles = makeStyles()(theme => ({
       textAlign: 'center',
       marginBottom: theme.typography.pxToRem(48),
     },
+
+    '@keyframes fadeIn': {
+      '0%': {
+        opacity: 0,
+      },
+      '100%': {
+        opacity: 1,
+      },
+    },
   },
 
   carouselItem: {
@@ -42,5 +51,24 @@ export const usePerformanceStyles = makeStyles()(theme => ({
 
   innerLeftBox: {
     padding: theme.spacing(9, 7, 0, 5),
+  },
+
+  dataList: {
+    listStyle: 'none',
+    display: 'flex',
+    padding: 0,
+    gap: theme.typography.pxToRem(40),
+
+    li: {
+      h3: {
+        color: '#53B6E8',
+        fontWeight: 700,
+        fontSize: theme.typography.pxToRem(40),
+      },
+      p: {
+        margin: theme.spacing(1, 0, 0, 0),
+        fontSize: theme.typography.pxToRem(14),
+      },
+    },
   },
 }));
