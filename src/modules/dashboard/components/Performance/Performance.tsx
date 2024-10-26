@@ -1,6 +1,8 @@
 import { Box, BoxProps, Typography } from '@mui/material';
 import { usePerformanceStyles } from './usePerformanceStyles';
 import { useEffect, useState } from 'react';
+import Banner1 from './assets/001.jpg';
+import Banner2 from './assets/002.jpg';
 
 const items = [
   {
@@ -12,7 +14,7 @@ const items = [
       ['10%', 'User Retention Rate'],
       ['60%', 'Conversion Rate of Effective Users'],
     ],
-    theme: '#FFF1A8',
+    image: Banner1,
   },
   {
     banner:
@@ -20,7 +22,7 @@ const items = [
     title: 'Smart Ads Make Monetization Easy',
     desc: '“The platform’s intelligent ad delivery and transparent revenue-sharing mechanism have made it easy for us to maximize our ad revenue.”',
     data: [['90%', 'Interaction Rate Over Industry Average']],
-    theme: '#000',
+    image: Banner2,
   },
 ];
 
@@ -76,8 +78,8 @@ export function Performance({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           </div>
 
           <img
+            src={items[currentIndex].image}
             style={{
-              backgroundColor: items[currentIndex].theme,
               border: 'none',
               outline: 'none',
             }}
