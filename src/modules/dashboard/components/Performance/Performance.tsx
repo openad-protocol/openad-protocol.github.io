@@ -42,7 +42,7 @@ export function Performance({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   useEffect(() => {
     const intervel = setInterval(() => {
       setCurrentIndex(index => (index + 1) % 2);
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearInterval(intervel);
