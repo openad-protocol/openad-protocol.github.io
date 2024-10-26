@@ -1,5 +1,4 @@
 import { makeStyles } from 'tss-react/mui';
-import Bg from './assets/bg.png';
 
 const SVG_HEIGHT = 496;
 
@@ -11,9 +10,6 @@ export const useFeaturesStyles = makeStyles()(theme => ({
     justifyContent: 'center',
     flexDirection: 'column',
     gap: theme.typography.pxToRem(36),
-
-    background: `url('${Bg}') no-repeat center`,
-    backgroundSize: `${theme.typography.pxToRem(770)} auto`,
 
     h1: {
       [`.typed-cursor`]: {
@@ -46,5 +42,12 @@ export const useFeaturesStyles = makeStyles()(theme => ({
     [theme.breakpoints.down('sm')]: {
       gap: theme.typography.pxToRem(0),
     },
+  },
+
+  animationBox: {
+    position: 'absolute',
+    top: theme.typography.pxToRem(84),
+    height: theme.typography.pxToRem(668),
+    zIndex: -1,
   },
 }));

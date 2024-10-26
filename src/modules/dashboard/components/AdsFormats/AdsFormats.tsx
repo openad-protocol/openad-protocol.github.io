@@ -1,15 +1,9 @@
 import { Box, BoxProps, Button, Typography } from '@mui/material';
 import { useAdsFormatsStyles } from './useAdsFormatsStyles';
 import { useEffect, useState } from 'react';
-import AdsBanner1 from './assets/12.png';
-import AdsBanner2 from './assets/133.png';
-import AdsBanner3 from './assets/9898.png';
-import AdsFloating1 from './assets/float-item-1.png';
-import AdsFloating2 from './assets/float-item-2.png';
-import AdsFloating3 from './assets/float-item-3.png';
-import AdsFloating4 from './assets/float-item-4.png';
-import AdsFloating5 from './assets/float-item-5.png';
-import AdsFloating6 from './assets/float-item-6.png';
+import Video1 from './assets/1.webm';
+import Video2 from './assets/2.webm';
+import Video3 from './assets/3.webm';
 
 const groupItems = ['Banner Ads', 'Interactive Ads', 'Task Ads'];
 
@@ -19,25 +13,14 @@ const descItems = [
   'Without disrupting the original app experience, we seamlessly embed tasks within apps scenarios, offering premium, rotating ad content for users to earn rewards like points by viewing designated ads.',
 ];
 
-const bannerItems = [AdsBanner1, AdsBanner2, AdsBanner3];
-
-const floatingItems = [
-  [AdsFloating1, AdsFloating2],
-  [AdsFloating3, AdsFloating4],
-  [AdsFloating5, AdsFloating6],
-];
-
-const floatingPositions = [
-  [300, 0],
-  [0, 260],
-  [0, 260],
-];
+const videos = [Video1, Video2, Video3];
 
 function PreloadImages({ images }: { images: string[] }): JSX.Element {
   useEffect(() => {
     images.forEach(src => {
-      const img = new Image();
-      img.src = src;
+      const preloadVideo = document.createElement('video');
+      preloadVideo.src = src;
+      preloadVideo.preload = 'auto'; // 设置为自动预加载
     });
   }, [images]);
 
@@ -65,32 +48,12 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
       </Box>
 
       <div className={classes.adsBox}>
-        <PreloadImages images={bannerItems} />
+        <PreloadImages images={videos} />
 
-        <Box
-          component="div"
-          position="relative"
-          key={`adsImg_${tabIndex}`}
-          sx={{ animation: 'fadeIn 1s forwards' }}
-        >
-          <img className={classes.adsBg} src={bannerItems[tabIndex]} />
-
-          <Box
-            component="img"
-            className={cx(classes.adsFloating, 'up')}
-            src={floatingItems[tabIndex][0]}
-            sx={theme => ({
-              left: theme.typography.pxToRem(floatingPositions[tabIndex][0]),
-            })}
-          />
-          <Box
-            component="img"
-            className={cx(classes.adsFloating, 'down')}
-            src={floatingItems[tabIndex][1]}
-            sx={theme => ({
-              left: theme.typography.pxToRem(floatingPositions[tabIndex][1]),
-            })}
-          />
+        <Box component="div" position="relative" key={`adsImg_${tabIndex}`}>
+          <video autoPlay muted>
+            <source src={videos[tabIndex]} type="video/webm" />
+          </video>
         </Box>
 
         <Box component="div" className={classes.adsTxtBox}>

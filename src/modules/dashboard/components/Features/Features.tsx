@@ -3,12 +3,32 @@ import { useFeaturesStyles } from './useFeaturesStyles';
 import { ReactTyped } from 'react-typed';
 import Logo from './assets/logo.jpg';
 import { OPEN_SANS_FONT_FAMILY } from 'modules/themes';
+import lottie from 'lottie-web';
+import { useRef, useEffect } from 'react';
 
 export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
   const { classes } = useFeaturesStyles();
 
+  const node = useRef<any>();
+
+  useEffect(() => {
+    const animation = lottie.loadAnimation({
+      container: node.current,
+      path: '/001.json',
+      renderer: 'canvas',
+      loop: true,
+      autoplay: true,
+    });
+
+    return () => {
+      animation.destroy();
+    };
+  }, []);
+
   return (
     <Box component="div" className={classes.root} sx={sx}>
+      <Box component="div" className={classes.animationBox} ref={node} />
+
       <Typography
         variant="h1"
         sx={{ display: 'flex', alignItems: 'flex-start' }}
@@ -45,7 +65,6 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
         </Typography>{' '}
         Protocol Builds
       </Typography>
-
       <Typography
         sx={theme => ({
           color: theme.palette.primary.main,
@@ -68,7 +87,6 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           loop
         />
       </Typography>
-
       <Typography variant="h1" textAlign="center">
         Advertising on Telegram
       </Typography>
