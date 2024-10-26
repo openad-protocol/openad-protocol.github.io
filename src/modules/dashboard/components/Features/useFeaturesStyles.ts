@@ -47,7 +47,8 @@ export const useFeaturesStyles = makeStyles()(theme => ({
   animationBox: {
     position: 'absolute',
     top: theme.typography.pxToRem(84),
-    height: theme.typography.pxToRem(668),
+    width: '90vw',
+    aspectRatio: '1 / 1',
     zIndex: -1,
   },
 }));
