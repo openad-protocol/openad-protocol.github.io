@@ -1,5 +1,5 @@
 // import { bridgeRoutesConfig } from 'modules/bridge';
-import { ADS_LINK, FLOW_RATE_LINK } from 'modules/common/const';
+import { ADS_LINK, DOC_LINK, FLOW_RATE_LINK } from 'modules/common/const';
 import { useTranslation } from 'modules/i18n';
 
 import { Locale } from 'modules/i18n';
@@ -39,8 +39,13 @@ export const useNavigationItems = (): INavItem[] => {
         isExternal: true,
       },
       {
-        title: 'For Publisher',
+        title: 'For Volume Owner',
         link: FLOW_RATE_LINK,
+        isExternal: true,
+      },
+      {
+        title: 'Documentation',
+        link: DOC_LINK,
         isExternal: true,
       },
     ],
