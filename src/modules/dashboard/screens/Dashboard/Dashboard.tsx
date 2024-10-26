@@ -5,6 +5,7 @@ import Connect from 'modules/dashboard/components/Connect';
 import { Features } from 'modules/dashboard/components/Features';
 import AdsFormats from 'modules/dashboard/components/AdsFormats';
 import RealGrowth from 'modules/dashboard/components/RealGrowth';
+import Performance from 'modules/dashboard/components/Performance';
 import { useUpdateOptimisticClaims } from 'modules/dashboard/hooks/useUpdateOptimisticClaims';
 
 export function Dashboard(): JSX.Element {
@@ -39,6 +40,15 @@ export function Dashboard(): JSX.Element {
 
         <RealGrowth
           sx={theme => ({
+            [theme.breakpoints.down('lg')]: {
+              px: theme.spacing(2.5),
+            },
+          })}
+        />
+
+        <Performance
+          sx={theme => ({
+            display: 'none !important',
             [theme.breakpoints.down('lg')]: {
               px: theme.spacing(2.5),
             },
