@@ -33,7 +33,25 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
   return (
     <Box id="for-advertiser" className={classes.root} sx={sx}>
-      <Typography variant="h1">{`OpenAD offers various ads formats`}</Typography>
+      <Typography variant="h1">
+        {`Open`}
+        <Typography
+          sx={theme => ({
+            display: 'contents !important',
+            color: theme.palette.primary.main,
+            fontSize: theme.typography.pxToRem(64),
+            fontWeight: 700,
+            whiteSpace: 'pre-wrap',
+
+            [theme.breakpoints.down('sm')]: {
+              fontSize: theme.typography.pxToRem(32),
+            },
+          })}
+        >
+          AD
+        </Typography>{' '}
+        {`offers various ads formats`}
+      </Typography>
 
       <Box component="div" className={classes.buttonGroup}>
         {groupItems.map((item, index) => (
