@@ -1,15 +1,16 @@
 import { Box, BoxProps, Button, Typography } from '@mui/material';
 import { useAdsFormatsStyles } from './useAdsFormatsStyles';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import AdsBanner1 from './assets/12.png';
 import AdsBanner2 from './assets/133.png';
 import AdsBanner3 from './assets/9898.png';
-import AdsFloating1 from './assets/float-item-1.png';
-import AdsFloating2 from './assets/float-item-2.png';
-import AdsFloating3 from './assets/float-item-3.png';
-import AdsFloating4 from './assets/float-item-4.png';
-import AdsFloating5 from './assets/float-item-5.png';
-import AdsFloating6 from './assets/float-item-6.png';
+import Banner001 from './assets/001.png';
+import Banner002 from './assets/002.png';
+import Banner003 from './assets/003.png';
+import Banner004 from './assets/004.png';
+import Banner005 from './assets/005.png';
+import Banner006 from './assets/006.png';
+import Banner007 from './assets/007.png';
 
 const groupItems = ['Banner Ads', 'Interactive Ads', 'Task Ads'];
 
@@ -20,18 +21,6 @@ const descItems = [
 ];
 
 const bannerItems = [AdsBanner1, AdsBanner2, AdsBanner3];
-
-const floatingItems = [
-  [AdsFloating1, AdsFloating2],
-  [AdsFloating3, AdsFloating4],
-  [AdsFloating5, AdsFloating6],
-];
-
-const floatingPositions = [
-  [300, 0],
-  [0, 260],
-  [0, 260],
-];
 
 function PreloadImages({ images }: { images: string[] }): JSX.Element {
   useEffect(() => {
@@ -71,26 +60,167 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           component="div"
           position="relative"
           key={`adsImg_${tabIndex}`}
-          sx={{ animation: 'fadeIn 1s forwards' }}
+          // sx={{ animation: 'fadeIn 1s forwards' }}
         >
-          <img className={classes.adsBg} src={bannerItems[tabIndex]} />
+          {tabIndex === 0 && (
+            <Fragment>
+              <Box
+                component="img"
+                src={Banner001}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  animation: 'fadeIn001 1s forwards',
+                  '@keyframes fadeIn001': {
+                    '0%': {
+                      opacity: 0,
+                      transform: 'translateX(-15%)',
+                    },
+                    '100%': {
+                      opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                })}
+              />
+              <Box
+                component="img"
+                src={Banner002}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  left: theme.typography.pxToRem(194),
+                  top: theme.typography.pxToRem(10),
+                  animation: 'fadeIn002 1s forwards',
+                  '@keyframes fadeIn002': {
+                    '0%': {
+                      opacity: 0,
+                      transform: 'translateX(15%)',
+                    },
+                    '100%': {
+                      opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                })}
+              />
+            </Fragment>
+          )}
 
-          <Box
-            component="img"
-            className={cx(classes.adsFloating, 'up')}
-            src={floatingItems[tabIndex][0]}
-            sx={theme => ({
-              left: theme.typography.pxToRem(floatingPositions[tabIndex][0]),
-            })}
-          />
-          <Box
-            component="img"
-            className={cx(classes.adsFloating, 'down')}
-            src={floatingItems[tabIndex][1]}
-            sx={theme => ({
-              left: theme.typography.pxToRem(floatingPositions[tabIndex][1]),
-            })}
-          />
+          {tabIndex === 1 && (
+            <Fragment>
+              <Box
+                component="img"
+                src={Banner003}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  animation: 'fadeIn003 1s forwards',
+                  '@keyframes fadeIn003': {
+                    '0%': {
+                      opacity: 0,
+                      transform: 'translateX(-15%)',
+                    },
+                    '100%': {
+                      opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                })}
+              />
+              <Box
+                component="img"
+                src={Banner004}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  left: theme.typography.pxToRem(194),
+                  top: theme.typography.pxToRem(10),
+                  animation: 'fadeIn004 1s forwards',
+                  '@keyframes fadeIn004': {
+                    '0%': {
+                      opacity: 0,
+                      transform: 'translateX(15%)',
+                    },
+                    '70%': {
+                      opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                    '100%': {
+                      opacity: 0,
+                    },
+                  },
+                })}
+              />
+              <Box
+                component="img"
+                src={Banner005}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  left: theme.typography.pxToRem(194),
+                  top: theme.typography.pxToRem(10),
+                  opacity: 0,
+                  animation: 'fadeIn005 1s forwards 1s',
+                  '@keyframes fadeIn005': {
+                    '0%': {
+                      opacity: 0,
+                      transform: 'translateX(15%)',
+                    },
+                    '100%': {
+                      opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                })}
+              />
+            </Fragment>
+          )}
+
+          {tabIndex === 2 && (
+            <Fragment>
+              <Box
+                component="img"
+                src={Banner006}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  animation: 'fadeIn006 1.8s forwards',
+                  '@keyframes fadeIn006': {
+                    '0%': {
+                      // opacity: 0,
+                      transform: 'translateX(-15%)',
+                    },
+                    '100%': {
+                      // opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                })}
+              />
+              <Box
+                component="img"
+                src={Banner007}
+                sx={theme => ({
+                  position: 'absolute',
+                  width: theme.typography.pxToRem(210),
+                  left: theme.typography.pxToRem(164),
+                  top: theme.typography.pxToRem(24),
+                  animation: 'fadeIn007 1.8s forwards',
+                  '@keyframes fadeIn007': {
+                    '0%': {
+                      // opacity: 0,
+                      transform: 'translateX(15%)',
+                    },
+                    '100%': {
+                      // opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                })}
+              />
+            </Fragment>
+          )}
         </Box>
 
         <Box component="div" className={classes.adsTxtBox}>
