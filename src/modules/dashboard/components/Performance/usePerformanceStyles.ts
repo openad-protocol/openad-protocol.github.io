@@ -51,6 +51,8 @@ export const usePerformanceStyles = makeStyles()(theme => ({
 
   innerLeftBox: {
     padding: theme.spacing(9, 7, 0, 5),
+    border: '1px solid #D4D4D4',
+    borderRight: 'none',
   },
 
   dataList: {
