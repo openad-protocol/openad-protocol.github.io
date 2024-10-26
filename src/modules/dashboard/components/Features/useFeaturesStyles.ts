@@ -48,7 +48,7 @@ export const useFeaturesStyles = makeStyles()(theme => ({
     position: 'absolute',
     top: theme.typography.pxToRem(84),
     width: '90vw',
-    aspectRatio: '1 / 1',
+    aspectRatio: '1336 / 668',
     zIndex: -1,
   },
 }));
