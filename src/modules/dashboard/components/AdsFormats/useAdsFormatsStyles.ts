@@ -55,9 +55,8 @@ export const useAdsFormatsStyles = makeStyles()(theme => ({
   adsBox: {
     display: 'grid',
     gridTemplateColumns: 'repeat(2,1fr)',
-    maxWidth: 900,
-    minHeight: 425,
-    marginTop: theme.spacing(9.5),
+    maxWidth: 1012,
+    marginTop: theme.spacing(12.5),
     gap: theme.spacing(7.5),
 
     [theme.breakpoints.down('sm')]: {
@@ -67,8 +66,7 @@ export const useAdsFormatsStyles = makeStyles()(theme => ({
   },
 
   adsTxtBox: {
-    // alignSelf: 'center',
-    paddingTop: theme.spacing(8),
+    alignSelf: 'center',
 
     h3: {
       fontSize: theme.typography.pxToRem(32),
