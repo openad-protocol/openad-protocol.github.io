@@ -25,8 +25,9 @@ export const useAdvPlatformsStyles = makeStyles()(theme => ({
       alignItems: 'flex-start',
       // gap: theme.spacing(5)
       maxWidth: theme.typography.pxToRem(511),
+      borderRadius: theme.typography.pxToRem(10),
 
-      img: {
+      svg: {
         width: theme.typography.pxToRem(72),
         aspectRatio: '1 / 1',
       },

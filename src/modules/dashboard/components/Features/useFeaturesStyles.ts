@@ -9,7 +9,6 @@ export const useFeaturesStyles = makeStyles()(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    gap: theme.typography.pxToRem(36),
 
     h1: {
       [`.typed-cursor`]: {
@@ -46,9 +45,19 @@ export const useFeaturesStyles = makeStyles()(theme => ({
 
   animationBox: {
     position: 'absolute',
-    top: theme.typography.pxToRem(84),
-    width: '80vw',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: theme.typography.pxToRem(1336),
     aspectRatio: '1336 / 668',
     zIndex: -1,
+
+    [theme.breakpoints.down('xl')]: {
+      top: theme.typography.pxToRem(84),
+      transform: 'none',
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: theme.typography.pxToRem(750),
+    },
   },
 }));

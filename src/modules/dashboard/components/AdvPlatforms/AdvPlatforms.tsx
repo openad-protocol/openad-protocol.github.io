@@ -1,9 +1,9 @@
 import { Box, BoxProps, List, ListItem, Typography } from '@mui/material';
 import { useAdvPlatformsStyles } from './useAdvPlatformsStyles';
-import PlatformIcon1 from './assets/112.png';
-import PlatformIcon2 from './assets/113.png';
-import PlatformIcon3 from './assets/114.png';
-import PlatformIcon4 from './assets/115.png';
+import PlatformIcon1 from './assets/001.svg?react';
+import PlatformIcon2 from './assets/002.svg?react';
+import PlatformIcon3 from './assets/003.svg?react';
+import PlatformIcon4 from './assets/004.svg?react';
 
 const items = [
   {
@@ -37,15 +37,15 @@ export function AdvPlatforms({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
   return (
     <Box id="features" className={classes.root} sx={sx}>
-      <Typography variant="h1">{`One-stop Smart Adverstising Platform`}</Typography>
+      <Typography variant="h1">{`One-stop Smart Adverstising Network`}</Typography>
 
       <List className={classes.advBox}>
         {items.map(item => (
           <ListItem
-            key={item.icon}
+            key={item.title}
             sx={{ backgroundColor: item.backgroundColor }}
           >
-            <img src={item.icon} />
+            <item.icon />
             <Typography variant="h3">{item.title}</Typography>
             <Typography>{item.desc}</Typography>
           </ListItem>

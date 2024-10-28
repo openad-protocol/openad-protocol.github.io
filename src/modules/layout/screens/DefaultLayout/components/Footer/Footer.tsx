@@ -20,6 +20,8 @@ export function Footer(): JSX.Element {
         alignItems: 'center',
         py: 3,
         color: 'text.secondary',
+        maxWidth: theme.typography.pxToRem(1200),
+
         [theme.breakpoints.down('sm')]: {
           display: 'none',
         },

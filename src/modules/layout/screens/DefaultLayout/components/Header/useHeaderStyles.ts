@@ -8,6 +8,9 @@ export const useHeaderStyles = makeStyles()(theme => ({
     top: 0,
     background: theme.palette.background.paper,
     zIndex: theme.zIndex.appBar,
+    maxWidth: theme.typography.pxToRem(1200),
+    left: '50%',
+    transform: 'translateX(-50%)',
 
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(2.5, 0),

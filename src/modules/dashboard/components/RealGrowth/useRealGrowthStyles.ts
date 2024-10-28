@@ -35,7 +35,7 @@ export const useRealGrowthStyles = makeStyles()(theme => ({
 
       h3: {
         fontSize: theme.typography.pxToRem(28),
-        fontWeight: 900,
+        fontWeight: 600,
         gridColumn: '2 / 3',
         gridRow: '1 / 2',
         lineHeight: theme.typography.pxToRem(40),

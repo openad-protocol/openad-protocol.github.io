@@ -31,7 +31,12 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
       <Typography
         variant="h1"
-        sx={{ display: 'flex', alignItems: 'flex-start' }}
+        sx={theme => ({
+          display: 'flex',
+          alignItems: 'flex-start',
+          alignContent: 'center',
+          height: theme.typography.pxToRem(76),
+        })}
       >
         <Box
           component="img"
@@ -68,9 +73,10 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
       <Typography
         sx={theme => ({
           color: theme.palette.primary.main,
-          lineHeight: theme.typography.pxToRem(87),
-          minHeight: theme.typography.pxToRem(87),
+          lineHeight: theme.typography.pxToRem(92),
+          minHeight: theme.typography.pxToRem(92),
           textAlign: 'center',
+          marginTop: theme.typography.pxToRem(12),
         })}
         variant="h1"
       >
@@ -87,7 +93,13 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           loop
         />
       </Typography>
-      <Typography variant="h1" textAlign="center">
+      <Typography
+        variant="h1"
+        textAlign="center"
+        sx={theme => ({
+          lineHeight: theme.typography.pxToRem(86),
+        })}
+      >
         Advertising on Telegram
       </Typography>
     </Box>
