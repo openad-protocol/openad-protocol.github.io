@@ -63,6 +63,7 @@ export const useRealGrowthStyles = makeStyles()(theme => ({
     gridTemplateColumns: 'repeat(2, auto)',
     gap: theme.spacing(6),
     marginTop: theme.spacing(9),
+    alignItems: 'center',
 
     [theme.breakpoints.down('md')]: {
       gridTemplateColumns: 'auto',
