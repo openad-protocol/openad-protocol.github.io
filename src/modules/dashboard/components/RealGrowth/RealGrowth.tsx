@@ -14,7 +14,7 @@ const items = [
   {
     icon: Icon2,
     title: '24/7 and omni-channel coverage',
-    desc: 'OpenAD Protocol has abundant apps and projects to cover all scenarios and help seamlessly connect you and your target audience',
+    desc: 'OpenAD Protocol has abundant apps and projects to cover all scenarios and help seamlessly connect you and your target audience.',
   },
   {
     icon: Icon3,

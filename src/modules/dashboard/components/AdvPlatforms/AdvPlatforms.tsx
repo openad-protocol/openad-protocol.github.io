@@ -37,7 +37,7 @@ export function AdvPlatforms({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
   return (
     <Box id="features" className={classes.root} sx={sx}>
-      <Typography variant="h1">{`One-stop Smart Adverstising Network`}</Typography>
+      <Typography variant="h1">{`One-stop Smart Advertising Network`}</Typography>
 
       <List className={classes.advBox}>
         {items.map(item => (
