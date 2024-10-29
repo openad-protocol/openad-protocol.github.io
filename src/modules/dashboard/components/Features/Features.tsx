@@ -1,7 +1,7 @@
 import { Box, BoxProps, Typography } from '@mui/material';
 import { useFeaturesStyles } from './useFeaturesStyles';
 import { ReactTyped } from 'react-typed';
-import Logo from './assets/logo.jpg';
+import Logo from '/favicon.png';
 import { OPEN_SANS_FONT_FAMILY } from 'modules/themes';
 import lottie from 'lottie-web';
 import { useRef, useEffect } from 'react';
@@ -35,16 +35,21 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           display: 'flex',
           alignItems: 'flex-start',
           alignContent: 'center',
-          height: theme.typography.pxToRem(76),
+          // height: theme.typography.pxToRem(76),
+          lineHeight: theme.typography.pxToRem(76),
+
+          [theme.breakpoints.down('sm')]: {
+            lineHeight: theme.typography.pxToRem(43),
+          },
         })}
       >
         <Box
           component="img"
           src={Logo}
           sx={theme => ({
-            width: theme.typography.pxToRem(87),
+            width: theme.typography.pxToRem(76),
             objectFit: 'contain',
-            margin: 'auto',
+            margin: 0,
 
             [theme.breakpoints.down('sm')]: {
               width: theme.typography.pxToRem(43),
@@ -58,11 +63,13 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
             color: theme.palette.primary.main,
             fontFamily: OPEN_SANS_FONT_FAMILY,
             fontSize: theme.typography.pxToRem(64),
+            lineHeight: theme.typography.pxToRem(76),
             fontWeight: 700,
             whiteSpace: 'pre-wrap',
 
             [theme.breakpoints.down('sm')]: {
               fontSize: theme.typography.pxToRem(32),
+              lineHeight: theme.typography.pxToRem(43),
             },
           })}
         >
@@ -77,6 +84,12 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           minHeight: theme.typography.pxToRem(92),
           textAlign: 'center',
           marginTop: theme.typography.pxToRem(12),
+
+          [theme.breakpoints.down('sm')]: {
+            marginTop: theme.typography.pxToRem(6),
+            lineHeight: theme.typography.pxToRem(43),
+            minHeight: theme.typography.pxToRem(43),
+          },
         })}
         variant="h1"
       >
@@ -98,6 +111,10 @@ export function Features({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
         textAlign="center"
         sx={theme => ({
           lineHeight: theme.typography.pxToRem(86),
+
+          [theme.breakpoints.down('sm')]: {
+            lineHeight: theme.typography.pxToRem(43),
+          },
         })}
       >
         Advertising on Telegram
