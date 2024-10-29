@@ -55,6 +55,7 @@ export const usePerformanceStyles = makeStyles()(theme => ({
     width: '100%',
     display: 'grid',
     gridTemplateColumns: `${theme.typography.pxToRem(551)} ${theme.typography.pxToRem(451)}`,
+    minHeight: theme.typography.pxToRem(422),
     flexDirection: 'row',
 
     h3: {
@@ -73,7 +74,9 @@ export const usePerformanceStyles = makeStyles()(theme => ({
 
     img: {
       width: theme.typography.pxToRem(451),
-      height: theme.typography.pxToRem(422),
+      aspectRatio: '451 / 422',
+      objectFit: 'cover',
+      objectPosition: 'center',
     },
   },
 

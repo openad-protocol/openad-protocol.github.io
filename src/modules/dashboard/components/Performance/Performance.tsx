@@ -1,8 +1,9 @@
 import { Box, BoxProps, Typography } from '@mui/material';
 import { usePerformanceStyles } from './usePerformanceStyles';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Banner1 from './assets/001.png';
 import Banner2 from './assets/002.png';
+import ScrollIcon from './assets/003.svg?react';
 import useCounterAnimation from 'modules/dashboard/hooks/useCounterAnimation';
 
 const items = [
@@ -44,13 +45,7 @@ export function Performance({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // const nextImage = () => {
-  //   setCurrentIndex(prevIndex => (prevIndex + 1) % items.length);
-  // };
-
-  // const prevImage = () => {
-  //   setCurrentIndex(prevIndex => (prevIndex - 1 + items.length) % items.length);
-  // };
+  const [update, setUpdate] = useState(0);
 
   useEffect(() => {
     const intervel = setInterval(() => {
@@ -60,6 +55,16 @@ export function Performance({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
     return () => {
       clearInterval(intervel);
     };
+  }, [update]);
+
+  const onPrev = useCallback(() => {
+    setUpdate(count => count + 1);
+    setCurrentIndex(index => Math.abs(index - 1) % 2);
+  }, []);
+
+  const onNext = useCallback(() => {
+    setUpdate(count => count + 1);
+    setCurrentIndex(index => (index + 1) % 2);
   }, []);
 
   return (
@@ -72,70 +77,116 @@ export function Performance({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           flexDirection: 'column',
           alignItems: 'center',
         }}
-        key={`banner_${currentIndex}`}
       >
-        <div className={classes.carouselItem}>
-          <div className={classes.innerLeftBox}>
-            <div
-              style={{
-                animation:
-                  'fadeInFromLeft 1s forwards ease-in, fadeInFromRight 1s forwards ease-out 4s',
-              }}
-            >
-              <h3>{items[currentIndex].title}</h3>
-              <p>{items[currentIndex].desc}</p>
-
-              <ul className={classes.dataList}>
-                {items[currentIndex].data.map((item, index) => {
-                  const percent = item[0] as number;
-                  const duration = percent < 20 ? 700 : undefined;
-
-                  return (
-                    <li key={index}>
-                      <h3>
-                        <Counter targetValue={percent} duration={duration} />%
-                      </h3>
-                      <p>{item[1]}</p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-
-          <img
-            src={items[currentIndex].image}
-            style={{
-              border: 'none',
-              outline: 'none',
-              animation: 'fadeIn 0.5s forwards, fadeOut 0.5s forwards 4.5s',
-            }}
-          />
-        </div>
-
-        {/* <Box
-          sx={{
+        <Box
+          component="div"
+          sx={theme => ({
             display: 'flex',
-            justifyContent: 'space-between',
-            width: '100%',
-            mt: 2,
-          }}
+            alignItems: 'center',
+            gap: theme.typography.pxToRem(20),
+
+            [theme.breakpoints.down('lg')]: {
+              display: 'grid',
+            },
+          })}
         >
-          <Button
-            variant="contained"
-            onClick={prevImage}
-            disabled={currentIndex === 0}
+          <Box
+            component="a"
+            style={{ display: 'inline-flex', cursor: 'pointer' }}
+            onClick={onPrev}
+            sx={theme => ({
+              [theme.breakpoints.down('lg')]: {
+                order: 2,
+                gridRowStart: 2,
+              },
+            })}
           >
-            Prev
-          </Button>
-          <Button
-            variant="contained"
-            onClick={nextImage}
-            disabled={currentIndex === items.length - 1}
+            <ScrollIcon />
+          </Box>
+
+          <Box
+            className={classes.carouselItem}
+            component="div"
+            sx={theme => ({
+              [theme.breakpoints.down('lg')]: {
+                gridColumnStart: 1,
+                gridColumnEnd: 3,
+              },
+            })}
           >
-            Next
-          </Button>
-        </Box> */}
+            <div
+              className={classes.innerLeftBox}
+              key={`bannerText_${currentIndex}`}
+            >
+              <div
+                style={{
+                  animation:
+                    'fadeInFromLeft 1s forwards ease-in, fadeInFromRight 1s forwards ease-out 4s',
+                }}
+              >
+                <h3>{items[currentIndex].title}</h3>
+                <p>{items[currentIndex].desc}</p>
+
+                <ul className={classes.dataList}>
+                  {items[currentIndex].data.map((item, index) => {
+                    const percent = item[0] as number;
+                    const duration = percent < 20 ? 700 : undefined;
+
+                    return (
+                      <li key={index}>
+                        <h3>
+                          <Counter targetValue={percent} duration={duration} />%
+                        </h3>
+                        <p>{item[1]}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+
+            <Box
+              component="div"
+              position="relative"
+              sx={{ overflow: 'hidden' }}
+            >
+              {items.map((item, index) => (
+                <Box
+                  key={index}
+                  component="img"
+                  src={item.image}
+                  sx={{
+                    border: 'none',
+                    outline: 'none',
+                    opacity: currentIndex === index ? 1 : 0,
+                    transition: 'opacity 0.5s ease-in-out',
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                  }}
+                />
+              ))}
+            </Box>
+          </Box>
+
+          <Box
+            component="a"
+            style={{
+              display: 'inline-flex',
+              transform: 'rotateY(180deg)',
+              cursor: 'pointer',
+              order: 3,
+            }}
+            onClick={onNext}
+            sx={theme => ({
+              [theme.breakpoints.down('lg')]: {
+                gridRowStart: 2,
+              },
+            })}
+          >
+            <ScrollIcon />
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
