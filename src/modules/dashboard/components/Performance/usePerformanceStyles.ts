@@ -21,6 +21,34 @@ export const usePerformanceStyles = makeStyles()(theme => ({
         opacity: 1,
       },
     },
+    '@keyframes fadeOut': {
+      '0%': {
+        opacity: 1,
+      },
+      '100%': {
+        opacity: 0,
+      },
+    },
+    '@keyframes fadeInFromLeft': {
+      '0%': {
+        opacity: 0,
+        transform: 'translateX(-12%)',
+      },
+      '100%': {
+        opacity: 1,
+        transform: 'translateX(0)',
+      },
+    },
+    '@keyframes fadeInFromRight': {
+      '0%': {
+        opacity: 1,
+        transform: 'translateX(0)',
+      },
+      '100%': {
+        opacity: 0,
+        transform: 'translateX(12%)',
+      },
+    },
   },
 
   carouselItem: {
