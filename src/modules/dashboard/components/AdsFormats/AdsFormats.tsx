@@ -68,7 +68,13 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
       <div className={classes.adsBox}>
         <PreloadImages images={videos} />
 
-        <Box component="div" position="relative" key={`adsImg_${tabIndex}`}>
+        <Box
+          component="div"
+          position="relative"
+          display="flex"
+          alignItems="center"
+          key={`adsImg_${tabIndex}`}
+        >
           <video autoPlay muted>
             <source src={videos[tabIndex]} type="video/webm" />
           </video>
