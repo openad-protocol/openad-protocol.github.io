@@ -1,1 +1,0 @@
-import{ah as n,j as e,ai as t,aj as i,ad as a}from"./index-CLP8-AHl.js";const l=()=>{const{classes:s}=n();return e.jsxs("div",{className:s.root,children:[e.jsx(t,{className:s.menuLink,title:"Testing only",to:i.dev.generatePath(),children:"🧪 Test menu"}),a.offlineTesting&&e.jsx("span",{children:"⚠️ Offline testing is enabled"})]})};export{l as TestLink};
