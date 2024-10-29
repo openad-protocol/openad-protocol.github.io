@@ -61,6 +61,10 @@ export const useAdsFormatsStyles = makeStyles()(theme => ({
 
     video: {
       width: '100%',
+      border: 'none',
+      outline: 'none',
+      boxShadow: 'none',
+      display: 'block',
     },
 
     [theme.breakpoints.down('sm')]: {
