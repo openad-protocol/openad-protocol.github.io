@@ -8,7 +8,6 @@ export const useHeaderStyles = makeStyles()(theme => ({
     top: 0,
     background: theme.palette.background.paper,
     zIndex: theme.zIndex.appBar,
-    maxWidth: theme.typography.pxToRem(1200),
     left: '50%',
     transform: 'translateX(-50%)',
 
@@ -23,6 +22,7 @@ export const useHeaderStyles = makeStyles()(theme => ({
     justifyItems: 'baseline',
     alignItems: 'center',
     gap: theme.spacing(2),
+    maxWidth: theme.typography.pxToRem(1200),
 
     [theme.breakpoints.up('md')]: {
       gridTemplateColumns: '1fr auto auto',
