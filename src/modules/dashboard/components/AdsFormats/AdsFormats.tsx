@@ -75,7 +75,7 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
           alignItems="center"
           key={`adsImg_${tabIndex}`}
         >
-          <video autoPlay muted>
+          <video autoPlay muted loop>
             <source src={videos[tabIndex]} type="video/webm" />
           </video>
         </Box>
