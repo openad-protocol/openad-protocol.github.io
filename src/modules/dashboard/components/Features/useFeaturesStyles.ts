@@ -58,6 +58,8 @@ export const useFeaturesStyles = makeStyles()(theme => ({
 
     [theme.breakpoints.down('sm')]: {
       width: theme.typography.pxToRem(750),
+      top: '50%',
+      transform: 'translateY(-50%)',
     },
   },
 }));

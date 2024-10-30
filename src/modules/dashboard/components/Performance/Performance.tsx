@@ -148,7 +148,13 @@ export function Performance({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
             <Box
               component="div"
               position="relative"
-              sx={{ overflow: 'hidden' }}
+              sx={theme => ({
+                overflow: 'hidden',
+                [theme.breakpoints.down('md')]: {
+                  width: '75vw',
+                  height: `${75 * (422 / 451)}vw`,
+                },
+              })}
             >
               {items.map((item, index) => (
                 <Box

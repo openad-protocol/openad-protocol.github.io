@@ -77,13 +77,33 @@ export const usePerformanceStyles = makeStyles()(theme => ({
       aspectRatio: '451 / 422',
       objectFit: 'cover',
       objectPosition: 'center',
+
+      [theme.breakpoints.down('md')]: {
+        width: '75vw',
+      },
+    },
+
+    [theme.breakpoints.down(1024)]: {
+      gridTemplateColumns: `auto ${theme.typography.pxToRem(451)}`,
+    },
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      flexDirection: 'column-reverse',
     },
   },
 
   innerLeftBox: {
     padding: theme.spacing(9, 7, 0, 5),
     border: '1px solid #D4D4D4',
-    borderRight: 'none',
+
+    [theme.breakpoints.up('md')]: {
+      borderRight: 'none',
+    },
+    [theme.breakpoints.down('md')]: {
+      borderTop: 'none',
+      width: '75vw',
+      padding: theme.spacing(3),
+    },
   },
 
   dataList: {
