@@ -136,16 +136,20 @@ export const mainThemeOptions: ThemeOptions = {
   },
   components: {
     MuiCssBaseline: {
-      styleOverrides: {
-        html: {
-          overflowX: 'hidden',
-        },
-        body: {
-          minHeight: '100vh',
-          background: theme.palette.background.default,
-          overflowX: 'hidden',
-        },
-      },
+      styleOverrides: `
+        html {
+          overflow-x: hidden;
+          scrollbar-width: none; /* Firefox */
+        }
+        html::-webkit-scrollbar {
+          display: none; /* Chrome 和 Safari */
+        }
+        body {
+          min-height: 100vh;
+          background: ${theme.palette.background.default};
+          overflow-x: hidden;
+        }
+      `,
     },
     MuiContainer: {
       styleOverrides: {
