@@ -138,16 +138,19 @@ export const mainThemeOptions: ThemeOptions = {
     MuiCssBaseline: {
       styleOverrides: `
         html {
-          overflow-x: hidden;
-          scrollbar-width: none; /* Firefox */
-        }
-        html::-webkit-scrollbar {
-          display: none; /* Chrome 和 Safari */
+          max-width: 100vw;
+          &, * {
+            overflow-x: hidden;
+            scrollbar-width: none; /* Firefox */
+          }
+          &::-webkit-scrollbar, *::-webkit-scrollbar {
+            overflow-x: hidden;
+            display: none; /* Chrome & Safari */
+          }
         }
         body {
           min-height: 100vh;
           background: ${theme.palette.background.default};
-          overflow-x: hidden;
         }
       `,
     },
