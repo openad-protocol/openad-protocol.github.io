@@ -1,4 +1,5 @@
 import { makeStyles } from 'tss-react/mui';
+import { isIOS } from 'react-device-detect';
 
 const SVG_HEIGHT = 496;
 
@@ -57,7 +58,7 @@ export const useFeaturesStyles = makeStyles()(theme => ({
     },
 
     [theme.breakpoints.down('sm')]: {
-      width: theme.typography.pxToRem(750),
+      width: isIOS ? '100vw' : theme.typography.pxToRem(750),
       top: '50%',
       transform: 'translateY(-50%)',
     },
