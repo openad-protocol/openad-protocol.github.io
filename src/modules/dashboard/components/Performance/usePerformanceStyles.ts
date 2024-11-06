@@ -58,6 +58,12 @@ export const usePerformanceStyles = makeStyles()(theme => ({
     minHeight: theme.typography.pxToRem(422),
     flexDirection: 'row',
 
+    li: {
+      [theme.breakpoints.down('sm')]: {
+        overflow: 'visible',
+      },
+    },
+
     h3: {
       margin: 0,
       maxWidth: theme.typography.pxToRem(456),
