@@ -1,14 +1,14 @@
 import { Box, BoxProps, List, ListItem, Typography } from '@mui/material';
 import { useRealGrowthStyles } from './useRealGrowthStyles';
-import Icon1 from './assets/001.png';
-import Icon2 from './assets/002.png';
-import Icon3 from './assets/003.png';
+import Icon1 from './assets/001.svg?react';
+import Icon2 from './assets/002.svg?react';
+import Icon3 from './assets/003.svg?react';
 import Banner from './assets/99.png';
 
 const items = [
   {
     icon: Icon1,
-    title: 'Make sure to reach out real users',
+    title: 'Make sure to reach out to real users',
     desc: 'We employ advanced anti-bot measures to ensure real user engagement and prevent fraudulent activity.',
   },
   {
@@ -52,8 +52,8 @@ export function RealGrowth({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
       <div className={classes.gridBox}>
         <List className={classes.pointsBox}>
           {items.map(item => (
-            <ListItem key={item.icon} disablePadding>
-              <img src={item.icon} />
+            <ListItem key={item.title} disablePadding>
+              <item.icon />
               <Typography variant="h3">{item.title}</Typography>
               <Typography>{item.desc}</Typography>
             </ListItem>
