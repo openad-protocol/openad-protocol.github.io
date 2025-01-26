@@ -31,15 +31,7 @@ function PreloadImages({ images }: { images: string[] }): JSX.Element {
 }
 
 const goTo = () => {
-  console.log(222)
-  // const button = document.getElementById('goToJoinUs');
-
-  // // 添加点击事件监听器
-  // button.addEventListener('click', function () {
-  // 	// 跳转到新的页面
-  // 	// window.location.href = 'https://forms.gle/B1YDRPhbEfczmnSH6'; // 将网址替换为你想跳转到的页面
-  	window.open('https://forms.gle/B1YDRPhbEfczmnSH6', '_blank');
-  // });
+  window.open('https://forms.gle/B1YDRPhbEfczmnSH6', '_blank');
 };
 
 export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
@@ -144,7 +136,8 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
                   <span className={classes.buttonGroup}
                     style={{
                       display: 'block',
-                      marginBottom: '1rem'
+                      // marginBottom: '1rem'
+                      textAlign: 'right'
                     }}
                   ><Button
                     className={'btnOrange'}
@@ -153,9 +146,7 @@ export function AdsFormats({ sx }: Pick<BoxProps, 'sx'>): JSX.Element {
                       backgroundColor: '#ef9d17 !important',
                       color: '#fff !important',
                     }}
-                  >
-                      {groupItems[tabIndex]}
-                    </Button>
+                  >Join Us</Button>
                   </span>
                 </span> :
                 descItems[tabIndex]
