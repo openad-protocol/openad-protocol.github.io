@@ -1,8 +1,8 @@
 import { Box, BoxProps, Typography } from '@mui/material';
 import { usePerformanceStyles } from './usePerformanceStyles';
 import { useCallback, useEffect, useState } from 'react';
-import Banner1 from './assets/001.png';
-import Banner2 from './assets/002.png';
+import Banner1 from './assets/004.png';
+import Banner2 from './assets/005.png';
 import ScrollIcon from './assets/003.svg?react';
 import useCounterAnimation from 'modules/dashboard/hooks/useCounterAnimation';
 
@@ -10,20 +10,20 @@ const items = [
   {
     banner:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTF86J58O8LUUIBXpbq63UYzKD2U8B5rAd1A&s',
-    title: 'Real User Growth Highly Boosted',
-    desc: "Banana TV, enabled by OpenAD's accurate targeted advertising strategy, obtained a large number of real high-quality user traffic.",
+    title: 'Powerful Traffic Collaborations',
+    desc: "Yescoin, a rapidly growing Telegram mini-app powered by TONBlockchain,boasts 50M+ users, 18M+ wallets, and 7M+ DAU.OpenAD's targeted traffic solutions have been integral toYescoin Fam's success, contributing to their impressive growth.",
     data: [
-      [10, 'User Retention Rate'],
-      [60, 'Conversion Rate of Effective Users'],
+      [8, 'Peak Conversion Rate'],
+      // [60, 'Conversion Rate of Effective Users'],
     ],
     image: Banner1,
   },
   {
     banner:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTF86J58O8LUUIBXpbq63UYzKD2U8B5rAd1A&s',
-    title: 'Smart Ads Make Monetization Easy',
-    desc: '“The platform’s intelligent ad delivery and transparent revenue-sharing mechanism have made it easy for us to maximize our ad revenue.”',
-    data: [[90, 'Interaction Rate Over Industry Average']],
+    title: 'Fueling Success with Traffic',
+    desc: "UXUY, a decentralized exchange offering seamless multi-chain trading and free gas for transactions. OpenAD's targeted trafficsolutions have helped drive higher user engagement on theplatform.",
+    data: [[95, 'Ad Fill Rate']],
     image: Banner2,
   },
 ];
