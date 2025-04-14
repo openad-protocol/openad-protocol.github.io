@@ -1,0 +1,803 @@
+/* --- Reset / Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif; /* Add fallback */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* --- Color Variables --- */
+:root {
+    --primary-color-green: #00C44A;
+    --primary-color-blue: #2979FF; /* Guessing blue from designs */
+    --text-color: #000000;
+    --text-color-light: #616161;
+    --bg-color: #FFFFFF;
+    --bg-dark: #000000;
+    --bg-gray: #f4f4f4;
+    --border-color: #e0e0e0;
+    --max-width: 1280px;
+    --header-height: 80px; /* Adjust as needed */
+}
+
+/* Theme specific overrides (Example for blue theme on page 31) */
+body.theme-blue {
+    --primary-color: var(--primary-color-blue);
+    --text-color: #FFFFFF; /* Text on dark blue bg */
+    --text-color-light: #cccccc;
+    --bg-color: #0a192f; /* Example dark blue background */
+    --bg-dark: #000000;
+    --bg-gray: #1a2a4a;
+    --border-color: #3a4a6a;
+}
+body.theme-blue .header {
+    background-color: rgba(10, 25, 47, 0.85); /* Slightly transparent dark blue */
+     backdrop-filter: blur(10px);
+     border-bottom: 1px solid var(--border-color);
+}
+body.theme-blue .button-primary {
+     background-color: var(--primary-color-blue);
+     color: #fff;
+ }
+ body.theme-blue .button-outline {
+     border-color: var(--primary-color-blue);
+     color: var(--primary-color-blue);
+ }
+ body.theme-blue .logo-text {
+     color: #FFFFFF; /* Ensure logo text is visible */
+ }
+ body.theme-blue .nav-links a {
+     color: #cccccc;
+ }
+ body.theme-blue .nav-links a:hover {
+     color: var(--primary-color-blue);
+ }
+
+
+/* --- Utility Classes --- */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.section {
+    padding: 80px 0;
+}
+.section-sm {
+     padding: 40px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.heading-xl {
+    font-size: 3.5rem; /* Adjust based on design */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--primary-color, var(--text-color)); /* Use theme color or default */
+}
+
+.heading-lg {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.heading-md {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    margin-bottom: 2rem;
+    max-width: 600px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bold { font-weight: 700; }
+.color-primary { color: var(--primary-color, var(--primary-color-green)); } /* Default to green */
+
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.button-primary {
+    background-color: var(--primary-color, var(--primary-color-green));
+    color: #fff;
+}
+
+.button-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: var(--bg-gray);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+.button-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.button-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color, var(--primary-color-green));
+    color: var(--primary-color, var(--primary-color-green));
+}
+.button-outline:hover {
+     background-color: rgba(0, 196, 74, 0.1); /* Light green tint on hover */
+}
+body.theme-blue .button-outline:hover {
+     background-color: rgba(41, 121, 255, 0.1); /* Light blue tint */
+}
+
+/* --- Header --- */
+.header {
+    position: fixed; /* Or sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 35px; /* Adjust size */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: 20px; /* Space before icons/buttons */
+}
+
+.nav-links li {
+    margin-left: 25px; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color, var(--primary-color-green));
+}
+
+.nav-extra {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a,
+.header-buttons a {
+    margin-left: 15px; /* Space between icons/buttons */
+    display: inline-block; /* For proper sizing */
+}
+
+.social-icons img {
+    height: 20px; /* Adjust icon size */
+    vertical-align: middle;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover img {
+    opacity: 1;
+}
+
+.header-buttons .button {
+    padding: 8px 18px; /* Smaller buttons in header */
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding-top: calc(var(--header-height) + 60px); /* Space below fixed header */
+    padding-bottom: 60px;
+    min-height: 70vh; /* Ensure it takes significant height */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* For background elements */
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2; /* Above background elements */
+}
+
+.hero .heading-xl {
+    margin-bottom: 1.5rem;
+}
+
+.hero .subheading {
+    margin-bottom: 2.5rem;
+    font-size: 1.3rem; /* Slightly larger subheading */
+    color: var(--text-color); /* Often darker in hero */
+}
+
+.hero-illustration {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 50%; /* Adjust as needed */
+    z-index: 1;
+    opacity: 0.9; /* Optional subtle effect */
+}
+.hero-illustration img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+/* Specific hero styles for different pages */
+.hero-p1 .hero-illustration { /* Example for Page 1 */
+   max-width: 600px; /* Adjust based on image */
+   right: 5%;
+}
+.hero-p2 .hero-illustration { /* Example for Page 2 - Globe */
+   max-width: 55%;
+   opacity: 0.5; /* Globe often semi-transparent */
+   right: -5%;
+}
+.hero-p3 .hero-illustration, /* Example for Pages 3, 31 */
+.hero-p4 .hero-illustration,
+.hero-p5 .hero-illustration,
+.hero-p6 .hero-illustration,
+.hero-p7 .hero-illustration,
+.hero-p8 .hero-illustration,
+.hero-p9 .hero-illustration {
+    max-width: 45%;
+    opacity: 1;
+    right: 10%;
+}
+
+
+/* --- Trusted By Section --- */
+.trusted-by {
+    background-color: var(--bg-gray);
+    padding: 40px 0;
+}
+
+.trusted-by h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.trusted-by h2 .bold {
+    color: var(--text-color);
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Space between logos */
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.partner-logo:hover {
+    opacity: 1;
+}
+
+.partner-logo img {
+    max-height: 35px; /* Adjust logo height */
+    max-width: 100px; /* Prevent oversized logos */
+    filter: grayscale(50%); /* Subtle effect, remove if full color desired */
+}
+.partner-logo:hover img {
+   filter: grayscale(0%);
+}
+
+.partner-info {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    text-align: left;
+}
+.partner-info span {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+
+/* --- Feature/Ad Sections --- */
+.feature-section, .ad-type-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    align-items: center;
+}
+
+/* Style for alternating layout */
+.feature-section:nth-child(even) .feature-image,
+.ad-type-section:nth-child(even) .ad-type-image {
+    order: -1; /* Move image to the left on even sections */
+}
+
+.feature-content h3, .ad-type-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color, var(--primary-color-green));
+}
+
+.feature-content p, .ad-type-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-color-light);
+}
+
+.feature-image img, .ad-type-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus pages (18-24) might just show one large section */
+.focus-section {
+    padding: 60px 0;
+}
+.focus-section .feature-section,
+.focus-section .ad-type-section {
+     grid-template-columns: 1fr; /* Stack on focus pages */
+     text-align: center;
+ }
+.focus-section .feature-content,
+.focus-section .ad-type-content {
+     max-width: 700px;
+     margin: 0 auto 40px auto; /* Center content */
+ }
+.focus-section .feature-image,
+.focus-section .ad-type-image {
+     max-width: 80%; /* Make image prominent */
+     margin: 0 auto;
+     order: 0 !important; /* Reset order */
+}
+.focus-section h2 { /* Add a main title for context */
+     text-align: center;
+     margin-bottom: 40px;
+ }
+
+
+/* --- Page 12: Design Spec --- */
+.design-spec-section {
+    padding: 40px 0;
+}
+.spec-block {
+    margin-bottom: 40px;
+}
+.spec-block h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+.color-swatches {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.swatch {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.swatch span { display: block; }
+.icon-list img {
+    height: 30px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.component-gallery img {
+    max-width: 250px; /* Limit size of examples */
+    margin: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* --- Page 13/31: Full Layout Specifics --- */
+.features-grid { /* Used on full page 13/31 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.feature-item {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+    border: 1px solid var(--border-color);
+}
+.feature-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+}
+.main-feature-illustration img {
+     display: block;
+     max-width: 400px; /* Adjust size */
+     margin: 40px auto 0 auto;
+ }
+
+.stats-section {
+     background-color: var(--bg-gray);
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.stat-item .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color, var(--primary-color-green));
+    margin-bottom: 5px;
+}
+.stat-item .label {
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+.stats-graph img {
+     display: block;
+     max-width: 600px;
+     margin: 20px auto 0 auto;
+     border-radius: 8px;
+ }
+
+.final-cta {
+    background-color: var(--primary-color, var(--primary-color-green));
+    color: #fff;
+    text-align: center;
+}
+body.theme-blue .final-cta {
+     background-color: var(--primary-color-blue);
+ }
+.final-cta h2 {
+    margin-bottom: 20px;
+}
+.final-cta .button {
+    background-color: #fff;
+    color: var(--primary-color, var(--primary-color-green));
+    font-weight: 700;
+}
+body.theme-blue .final-cta .button {
+     color: var(--primary-color-blue);
+ }
+
+/* --- Page 17: Logo Variations --- */
+.logo-variations-section {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr); /* 2 columns */
+     gap: 20px;
+ }
+ .logo-card {
+     padding: 30px;
+     border-radius: 8px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .logo-card img { max-height: 50px; }
+ .logo-card.bg-white { background-color: #fff; }
+ .logo-card.bg-dark { background-color: #333; }
+ .logo-card.bg-black { background-color: #000; }
+ .logo-card.bg-blue { background-color: var(--primary-color-blue); }
+ .logo-card.bg-primary { background-color: var(--primary-color, var(--primary-color-green));}
+
+
+/* --- Pages 28/29: Sign In --- */
+.signin-page {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-gray); /* Or a background image */
+     /* background: url('../images/illustration-signin-bg.png') no-repeat center center/cover; */
+}
+.signin-panel {
+    background-color: var(--bg-color);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px; /* Adjust as needed */
+    width: 90%;
+}
+.signin-panel h2 {
+    margin-bottom: 10px;
+}
+.signin-panel .signup-link {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+.signin-panel .signup-link a {
+    color: var(--primary-color, var(--primary-color-green));
+    text-decoration: none;
+    font-weight: 600;
+}
+.signin-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.signin-option {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.signin-option:hover, .signin-option.selected {
+    border-color: var(--primary-color, var(--primary-color-green));
+    background-color: rgba(0, 196, 74, 0.05); /* Light primary tint */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 196, 74, 0.1);
+}
+body.theme-blue .signin-option:hover,
+body.theme-blue .signin-option.selected {
+    border-color: var(--primary-color-blue);
+    background-color: rgba(41, 121, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(41, 121, 255, 0.1);
+}
+
+.signin-option img {
+    height: 50px; /* Adjust icon size */
+    margin-bottom: 15px;
+}
+.signin-option span {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+}
+/* Button color variation for Page 29 */
+.signin-page.style-2 .button-primary { /* Use style-2 class on body for page 29 */
+     background-color: var(--primary-color, var(--primary-color-green));
+     color: #fff;
+ }
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--bg-dark);
+    color: #a0a0a0;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+body.theme-blue .footer {
+     background-color: #081428; /* Darker blue */
+     color: #a0b0c0;
+ }
+
+.footer .social-icons {
+    margin-top: 15px;
+}
+
+.footer .social-icons img {
+    height: 22px;
+    opacity: 0.6;
+}
+.footer .social-icons a:hover img {
+    opacity: 1;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .heading-xl { font-size: 2.8rem; }
+    .heading-lg { font-size: 2rem; }
+    .hero .heading-xl { font-size: 3rem; } /* Keep hero slightly larger */
+
+    .main-nav { /* Prepare for mobile menu */
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        align-items: stretch; /* Stretch items */
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-110%); /* Hide off-screen */
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    body.theme-blue .main-nav {
+         background-color: var(--bg-color); /* Dark theme bg */
+     }
+
+    .main-nav.active {
+        transform: translateY(0); /* Show menu */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+     .nav-links li:last-child { border-bottom: none; }
+
+    .nav-links a {
+        display: block; /* Make links full width */
+        padding: 15px 20px;
+        color: var(--text-color); /* Ensure visibility on mobile */
+    }
+    .nav-links a:hover {
+         background-color: var(--bg-gray);
+     }
+
+    .nav-extra {
+        padding: 15px 20px;
+        justify-content: center; /* Center icons/buttons */
+        border-top: 1px solid var(--border-color);
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        margin-left: auto; /* Push it to the right */
+        order: 3; /* Ensure it's last in flex order */
+    }
+
+    .feature-section, .ad-type-section {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 40px;
+        text-align: center;
+    }
+     .feature-section .feature-content,
+     .ad-type-section .ad-type-content {
+         margin-bottom: 20px;
+     }
+
+    .feature-section .feature-image,
+    .ad-type-section .ad-type-image {
+        order: 0 !important; /* Reset order */
+        max-width: 80%; /* Control image size */
+        margin: 0 auto;
+    }
+
+    .hero {
+         padding-top: calc(var(--header-height) + 40px);
+         text-align: center;
+     }
+     .hero-content {
+         max-width: 100%;
+         margin-bottom: 40px;
+     }
+     .hero .subheading { margin: 0 auto 2.5rem auto; }
+     .hero-illustration {
+         position: relative; /* No longer absolute */
+         transform: none;
+         top: auto;
+         right: auto;
+         max-width: 70%; /* Adjust */
+         margin: 0 auto;
+     }
+}
+
+@media (max-width: 768px) {
+     .heading-xl { font-size: 2.2rem; }
+     .hero .heading-xl { font-size: 2.5rem; }
+     .subheading { font-size: 1rem; }
+     .hero .subheading { font-size: 1.1rem; }
+     .section { padding: 60px 0; }
+     .partner-logos { gap: 30px; }
+     .partner-logo img { max-height: 30px; }
+     .stats-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));}
+     .stat-item .number { font-size: 2rem; }
+     .signin-panel { padding: 30px; }
+}
+
+@media (max-width: 576px) {
+     .heading-xl { font-size: 1.8rem; }
+     .hero .heading-xl { font-size: 2rem; }
+     .subheading { font-size: 0.9rem; }
+     .hero .subheading { font-size: 1rem; }
+     .button { padding: 10px 20px; font-size: 0.9rem; }
+     .header .container { padding: 0 15px; }
+     .container { padding: 0 15px; }
+     .partner-logos { gap: 20px 30px; } /* Adjust vertical/horizontal gap */
+     .partner-logo { flex-direction: column; text-align: center; gap: 5px;} /* Stack logo and text */
+     .partner-info { font-size: 0.8rem; }
+     .signin-options { grid-template-columns: 1fr; } /* Single column on very small screens */
+ }
