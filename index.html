@@ -1,63 +1,48 @@
 <!doctype html>
 <html lang="en">
   <head>
-    
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js',
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-M8XPT2LC');
-    </script>
-    <!-- End Google Tag Manager -->
-     
-    <meta name="environment" content="prod" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="./icon_result.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenAD Protocol - Drive Real Result</title>
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" type="image/ico+xml" href="/favicon.ico" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="./libs/AN.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.cdnfonts.com/css/arial-2" rel="stylesheet" />
-    <link
-      href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
-      rel="stylesheet"
-    />
-
-    <title>OpenAD</title>
-
-    <script type="module" crossorigin src="/assets/index-dGEEphS1.js"></script>
+    <script>
+      var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+      window.canvasInit = function() {
+        canvas = document.getElementById("canvas");
+        anim_container = document.getElementById("animation_container");
+        dom_overlay_container = document.getElementById("dom_overlay_container");
+        var comp = AdobeAn.getComposition("A369162FC48EDC4FB16DA95D46CF439B");
+        var lib = comp.getLibrary();
+        handleComplete({},comp);
+      }
+      function handleComplete(evt,comp) {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        var lib=comp.getLibrary();
+        var ss=comp.getSpriteSheet();
+        exportRoot = new lib.antgani();
+        exportRoot.addEventListener("tick", AdobeAn.handleFilterCache);
+        stage = new lib.Stage(canvas);
+        //Registers the "tick" event listener.
+        fnStartAnimation = function() {
+          stage.addChild(exportRoot);
+          createjs.Ticker.framerate = lib.properties.fps;
+          createjs.Ticker.addEventListener("tick", stage);
+        }
+        //Code to support hidpi screens and responsive scaling.
+        AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);
+        AdobeAn.compositionLoaded(lib.properties.id);
+        fnStartAnimation();
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-JxpxABRM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C_RGOG-j.css">
   </head>
-
   <body>
-    
-    <!-- Google Tag Manager -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-M8XPT2LC"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager -->
-    
-    <div id="root"></div>
+    <div id="app"></div>
+
   </body>
 </html>
